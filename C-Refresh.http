@@ -1,0 +1,6 @@
+@C_Refresh_HostAddress = http://localhost:5164
+
+GET {{C_Refresh_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
