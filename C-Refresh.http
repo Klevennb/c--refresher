@@ -4,3 +4,32 @@ GET {{C_Refresh_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{C_Refresh_HostAddress}}/api/posts/external
+Accept: application/json
+
+###
+
+POST {{C_Refresh_HostAddress}}/api/posts
+Content-Type: application/json
+
+{"userId":1,"title":"Hello","body":"A mock post"}
+
+###
+
+GET {{C_Refresh_HostAddress}}/api/posts
+
+###
+
+GET {{C_Refresh_HostAddress}}/api/posts/1
+
+###
+
+PUT {{C_Refresh_HostAddress}}/api/posts/1
+Content-Type: application/json
+
+{"userId":1,"title":"Edited","body":"Updated mock post"}
+
+###
+
+DELETE {{C_Refresh_HostAddress}}/api/posts/1
