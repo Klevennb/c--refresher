@@ -4,6 +4,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddSingleton<C_Refresh.PostStore>();
+builder.Services.AddSingleton<C_Refresh.DogStore>();
+builder.Services.AddHttpClient("DogApi", client =>
+{
+    client.BaseAddress = new Uri("https://dog.ceo/api/");
+    client.Timeout = TimeSpan.FromSeconds(10);
+});
 builder.Services.AddHttpClient("JsonPlaceholder", client =>
 {
     client.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
@@ -20,6 +26,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapPostEndpoints();
+app.MapDogEndpoints();
 
 var summaries = new[]
 {

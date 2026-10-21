@@ -33,3 +33,34 @@ Content-Type: application/json
 ###
 
 DELETE {{C_Refresh_HostAddress}}/api/posts/1
+
+###
+
+GET {{C_Refresh_HostAddress}}/api/dogs/external
+Accept: application/json
+
+###
+
+POST {{C_Refresh_HostAddress}}/api/dogs
+Content-Type: application/json
+
+{"name":"Buddy","imageUrl":"https://images.dog.ceo/example.jpg"}
+
+###
+
+GET {{C_Refresh_HostAddress}}/api/dogs
+
+###
+
+GET {{C_Refresh_HostAddress}}/api/dogs/1
+
+###
+
+PUT {{C_Refresh_HostAddress}}/api/dogs/1
+Content-Type: application/json
+
+{"name":"Max","imageUrl":"https://images.dog.ceo/updated.jpg"}
+
+###
+
+DELETE {{C_Refresh_HostAddress}}/api/dogs/1
